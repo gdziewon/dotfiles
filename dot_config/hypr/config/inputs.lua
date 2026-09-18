@@ -5,6 +5,8 @@ hl.config({
         sensitivity = 0.6,
         accel_profile = "flat",
 	follow_mouse = 2,
+
+	kb_layout = "pl",
     },
     -- Uncomment the section below to enable software cursors; this can help with cursor display or behavior issues
     cursor = {

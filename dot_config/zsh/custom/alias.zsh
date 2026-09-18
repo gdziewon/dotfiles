@@ -46,6 +46,7 @@ if [[ $TERM == "xterm-kitty" ]]; then
     alias sshk="kitty +kitten ssh"
     # for minimal systems like openwrt
     alias ssht="TERM=xterm-256color ssh"
+    alias clear="clear -T xterm-256color"
 fi
 
 # if we have bat todo: 'batcat' handling?

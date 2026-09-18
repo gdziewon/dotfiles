@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Exec=xhost +SI:localuser:root
+Name=Xhost Root Access
+Terminal=false
