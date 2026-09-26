@@ -12,6 +12,7 @@ hl.monitor({
     mode      = "preferred",
     position  = "auto",
     scale     = "auto",
+    --bitdepth = 10,
 })
 
 hl.monitor({
@@ -19,4 +20,5 @@ hl.monitor({
     mode      = "preferred",
     position  = "auto",
     scale     = "auto",
+    --bitdepth = 10,
 })

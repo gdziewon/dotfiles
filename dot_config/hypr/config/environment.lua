@@ -12,10 +12,12 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 -- Cursor
-hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
-hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
-hl.env("XCURSOR_SIZE", "24")
+local cursor = "Bibata-Modern-Ice"
+local cursor_size = "24"
+hl.env("HYPRCURSOR_THEME", cursor)
+hl.env("HYPRCURSOR_SIZE", cursor_size)
+hl.env("XCURSOR_THEME", cursor)
+hl.env("XCURSOR_SIZE", cursor_size)
 
 -- if you have an NVIDIA GPU uncomment the following lines:
 hl.env("GBM_BACKEND", "nvidia-drm") -- force GBM as a backend

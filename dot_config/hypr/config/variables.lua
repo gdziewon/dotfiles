@@ -1,10 +1,9 @@
 -- Hyprland default apps
 
 TERMINAL     = "kitty"
-FILE_MANAGER = "yazi"
+FILE_MANAGER = "dolphin"
 BROWSER      = "firefox"
-EDITOR       = "nvim"
-CALCULATOR   = "gnome-calculator"
+MUSIC        = "spotifast"
 
 -- Monitors
 MONITORS = { "DP-1", "HDMI-A-2" }

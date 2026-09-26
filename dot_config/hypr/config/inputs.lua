@@ -2,15 +2,16 @@
 
 hl.config({
     input = {
-        sensitivity = 0.6,
-        accel_profile = "flat",
-	follow_mouse = 2,
-
-	kb_layout = "pl",
+        --sensitivity = 0.7,
+        --accel_profile = "adaptive",
+	    follow_mouse = 2,
+	    kb_layout = "pl",
+        repeat_delay = 250,
     },
     -- Uncomment the section below to enable software cursors; this can help with cursor display or behavior issues
     cursor = {
-        no_hardware_cursors = 1,
+        no_hardware_cursors = 2,
+        default_monitor = PRIMARY_MONITOR,
     },
 })
 
