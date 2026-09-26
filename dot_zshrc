@@ -23,7 +23,12 @@ COMPLETION_WAITING_DOTS="true"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-[[ -z "${plugins[*]}" ]] && plugins=(git fzf extract sudo z zsh-syntax-highlighting zsh-autosuggestions zsh-history-substring-search)
+[[ -z "${plugins[*]}" ]] && plugins=(git extract sudo z zsh-syntax-highlighting zsh-autosuggestions zsh-history-substring-search)
+
+if command -v fzf >/dev/null 2>&1; then
+    plugins+=(fzf)
+fi
+
 
 source $ZSH/oh-my-zsh.sh
 
