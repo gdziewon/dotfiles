@@ -27,19 +27,28 @@ if command -v eza >/dev/null 2>&1; then
     alias l.="eza -a | grep -e '^\.'"                               # show only dotfiles
 fi
 
+{{ if eq .chezmoi.osRelease.idLike "arch" }}
+
 # Arch specific
-if command -v pacman >/dev/null 2>&1; then
-    alias rmpkg="sudo pacman -Rsn"
-    alias cleanch="sudo pacman -Scc"
-    alias fixpacman="sudo rm /var/lib/pacman/db.lck"
-    alias upd="sudo pacman -Syu && paru -Syu"
+alias rmpkg="sudo pacman -Rsn"
+alias cleanch="sudo pacman -Scc"
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+alias upd="sudo pacman -Syu && paru -Syu"
 
-    # Cleanup orphaned packages
-    alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"
+# Cleanup orphaned packages
+alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"
 
-    # Recent installed packages
-    alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-fi
+# Recent installed packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
+{{ else if eq .chezmoi.osRelease.idLike "debian" }}
+
+# Debian specific
+alias fd="fdfind"
+alias bat="batcat"
+alias upd="sudo apt update && sudo apt upgrade"
+
+{{ end }}
 
 # Specifically for kitty
 if [[ $TERM == "xterm-kitty" ]]; then
@@ -49,7 +58,6 @@ if [[ $TERM == "xterm-kitty" ]]; then
     alias clear="clear -T xterm-256color"
 fi
 
-# if we have bat todo: 'batcat' handling?
 if command -v bat >/dev/null 2>&1; then
     alias cat="bat -pp"
     alias less="bat --paging=always"
