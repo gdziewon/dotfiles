@@ -33,7 +33,7 @@
     stripComponents = 1
     refreshPeriod = "168h"
     forget = true
-[".config/kitty/kitty-themes"]
+[".config/kitty/themes/kitty-themes"]
     type = "archive"
     url = "https://github.com/dexpota/kitty-themes/archive/master.tar.gz"
     exact = true
