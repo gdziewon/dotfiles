@@ -1,0 +1,42 @@
+theme = "trans"
+
+[editor]
+color-modes = true
+line-number = "relative"
+cursorline = true
+continue-comments = true # check if I like it
+
+# [editor.statusline]
+# center = [
+#     "file-name",
+#     "read-only-indicator",
+#     "file-modification-indicator",
+#     "spacer",
+#     "version-control",
+# ]
+# left = [
+#     "mode",
+#     "selections",
+#     "primary-selection-length",
+# ]
+# right = ["spinner", "diagnostics", "workspace-diagnostics"]
+
+[editor.statusline.mode]
+insert = "INSERT"
+normal = "NORMAL"
+select = "SELECT"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.whitespace.characters]
+tab = "→"
+tabpad = "·"

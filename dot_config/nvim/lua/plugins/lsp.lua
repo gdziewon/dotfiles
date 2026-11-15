@@ -151,7 +151,7 @@ do
       },
     },
 
-    qmlls = { cmd = { 'qmlls6'} }
+    qmlls = { cmd = { 'qmlls6'}, root_markers = { "shell.qml", ".qmlls.ini", ".git" } }
   }
 
   vim.pack.add {

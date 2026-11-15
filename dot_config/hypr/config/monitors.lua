@@ -6,19 +6,31 @@
 --     position  = "0x0",
 --     scale     = "1",
 -- })
+MONITORS = {
+    {
+        name     = "DP-1",
+        mode     = "2560x1440@239.97",
+        position = "0x0",
+        scale    = "1",
+        bitdepth = 10
+    },
+    {
+        name     = "DP-2",
+        mode     = "1920x1080@144.00",
+        position = "2560x0",
+        scale    = "1",
+        bitdepth = 10
+    }
+}
 
-hl.monitor({
-    output    = MONITORS[1],
-    mode      = "preferred",
-    position  = "auto",
-    scale     = "auto",
-    --bitdepth = 10,
-})
+PRIMARY_MONITOR = MONITORS[1].name
 
-hl.monitor({
-    output    = MONITORS[2],
-    mode      = "preferred",
-    position  = "auto",
-    scale     = "auto",
-    --bitdepth = 10,
-})
+for _, mon in ipairs(MONITORS) do
+    hl.monitor({
+        output   = mon.name,
+        mode     = mon.mode or "preferred",
+        position = mon.position or "auto",
+        scale    = mon.scale or "auto",
+        bitdepth = mon.bitdepth or 8
+    })
+end

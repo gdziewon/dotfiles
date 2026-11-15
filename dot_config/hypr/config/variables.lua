@@ -2,12 +2,12 @@
 
 TERMINAL     = "kitty"
 FILE_MANAGER = "dolphin"
-BROWSER      = "firefox"
+BROWSER      = "zen-browser"
 MUSIC        = "spotifast"
 
--- Monitors
-MONITORS = { "DP-1", "HDMI-A-2" }
-PRIMARY_MONITOR = MONITORS[1]
+require("config.monitors") -- TODO: maybe it should return list of monitors instead?
+PRIMARY_MONITOR = MONITORS[1].name
+SECONDARY_MONITOR = MONITORS[2].name
 
 -- Workspaces
 NUM_WPM = 3 -- Number of workspaces per monitor (Max 10)

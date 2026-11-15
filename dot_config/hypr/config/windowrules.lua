@@ -1,7 +1,9 @@
 -- Window rules wiki https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 
 -- Generic floating position
-hl.window_rule({ match = { float = true }, center = true, persistent_size = true })
+-- hl.window_rule({ match = { float = true }, center = true, persistent_size = true })
+--
+require("config.variables")
 
 -- Picture-in-Picture
 hl.window_rule({
@@ -64,7 +66,7 @@ hl.window_rule({
 	fullscreen_state = 0,
 })
 hl.window_rule({ match = { class = "^(.*[Ll]auncher.*)$" }, float = true, monitor = PRIMARY_MONITOR })
-hl.window_rule({ match = { class = "^(vesktop|discord)$" }, monitor = PRIMARY_MONITOR })
+hl.window_rule({ match = { class = "^(vesktop|discord)$" }, monitor = SECONDARY_MONITOR })
 hl.window_rule({ match = { class = "^(org\\.kde\\.keditfiletype)$" }, float = true })
 hl.window_rule({
 	match = { class = "^(org\\.kde\\.ark)$" },
@@ -144,4 +146,20 @@ hl.window_rule({
 		pin = false,
 	},
 	no_focus = true,
+})
+
+-- Pop-up rules - should appear under the cursor
+hl.window_rule({
+    name = "xwayland-menu-fix",
+    match = { class = "^([Ss]team)$", title = "^$" },
+    float = true,
+    move = {"cursor_x", "cursor_y"},
+    no_anim = true
+})
+
+hl.window_rule({
+    name = "general-tooltip-fix",
+    match = { title = "(?i).*(tooltip|menu|popup).*" },
+    float = true,
+    move = {"cursor_x", "cursor_y"}
 })

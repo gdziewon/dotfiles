@@ -1,0 +1,7 @@
+# [[language]]
+# name = "qml"
+# roots = [ "shell.qml" ]
+# language-servers = [ "qmlls6" ]
+
+[language-server.qmlls]
+command = "qmlls6"

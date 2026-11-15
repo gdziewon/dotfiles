@@ -5,9 +5,9 @@
 
 for i, mon in ipairs(MONITORS) do
 	local base = (i-1) * NUM_WPM
-	hl.workspace_rule({ workspace = tostring(base+1), monitor = mon, default = true, persistent = true })
-	hl.workspace_rule({ workspace = tostring(base+2), monitor = mon, default = true, persistent = true })
-	hl.workspace_rule({ workspace = tostring(base+3), monitor = mon, default = true, persistent = true })
+	hl.workspace_rule({ workspace = tostring(base+1), monitor = mon.name, default = true, persistent = true })
+	hl.workspace_rule({ workspace = tostring(base+2), monitor = mon.name, default = true, persistent = true })
+	hl.workspace_rule({ workspace = tostring(base+3), monitor = mon.name, default = true, persistent = true })
 end
 
 hl.workspace_rule({ workspace = "name:gaming", monitor = PRIMARY_MONITOR, default = true })

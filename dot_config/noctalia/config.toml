@@ -2,9 +2,11 @@
 ui_scale = 1.20
 
 [bar.default]
-center = [ "workspaces", "spacer_1", "active_window" ]
+smart_auto_hide = true
+reserve_space = false
+center = [ "workspaces" ]
 concave_edge_corners = true
-end = [ "media", "spacer_1", "tray", "notifications", "network", "volume", "session" ]
+end = [ "media", "spacer_1", "tray", "volume", "session" ]
 margin_edge = 0
 margin_ends = 0
 radius_bottom_left = 12
@@ -12,16 +14,17 @@ radius_bottom_right = 12
 radius_top_left = 0
 radius_top_right = 0
 scale = 1.10
-start = [ "launcher", "clock", "spacer_1", "group:g1" ]
+start = [ "clock", "spacer_1", "group:g1" ]
 thickness = 35
 
     [[bar.default.capsule_group]]
     border = ""
     fill = "on_secondary"
     id = "g1"
-    members = [ "temp", "sysmon_2", "sysmon_3" ]
+    members = [ "temp", "sysmon_3" ]
     opacity = 1.0
     padding = 6.0
+
 
 [shell]
 clipboard_image_action_command = "satty -f -"
@@ -46,37 +49,36 @@ settings_show_advanced = true
     [[shell.session.actions]]
     action = "lock"
     countdown_seconds = 0.0
-    enabled = true
-    shortcut = "1"
-    variant = "default"
+    enabled = false
 
     [[shell.session.actions]]
     action = "logout"
     countdown_seconds = 0.0
     enabled = true
-    shortcut = "2"
-    variant = "default"
 
     [[shell.session.actions]]
     action = "lock_and_suspend"
     countdown_seconds = 3.0
-    enabled = true
-    shortcut = "3"
-    variant = "default"
+    enabled = false
 
     [[shell.session.actions]]
     action = "reboot"
     countdown_seconds = 3.0
     enabled = true
-    shortcut = "4"
-    variant = "default"
 
     [[shell.session.actions]]
     action = "shutdown"
     countdown_seconds = 3.0
     enabled = true
-    shortcut = "5"
     variant = "destructive"
+
+[shell.launcher]
+categories = false
+app_grid = false
+
+[lockscreen]
+transition = ["stripes"]
+transition_duration = 750
 
 [system.monitor]
 gpu_poll_seconds = 2
@@ -91,7 +93,7 @@ wallpaper_scheme = "m3-tonal-spot"
 
 [widget.clock]
 color = "secondary"
-format = "{:%H:%M %A %m/%d/%y}"
+format = "{:%H:%M %A %d/%m/%y}"
 
 [widget.launcher]
 color = "secondary"
@@ -145,4 +147,4 @@ show_labels = false
 enabled = true
 force = true
 temperature_day = 6500
-temperature_night = 5500
+temperature_night = 5000

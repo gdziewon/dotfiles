@@ -14,7 +14,7 @@ hl.bind(mainMod .. " + ALT + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D",           hl.dsp.window.fullscreen({ mode = 1 }))
 hl.bind(mainMod .. " + F",           hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + J",           hl.dsp.layout("togglesplit"))
-
+--hl.bind(mainMod .. " + R",           hl.dsp.layout("hyprctl reload"))
 -- Change focus
 hl.bind(mainMod .. " + H",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
@@ -41,7 +41,7 @@ hl.bind(mainMod .. " + SHIFT + Left",                 hl.dsp.window.move({ direc
 hl.bind(mainMod .. " + SHIFT + Down",                 hl.dsp.window.move({ direction = "d" }))
 
 for i, mon in ipairs(MONITORS) do
-    hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ monitor = mon}))
+    hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ monitor = mon.name }))
     if i>=10 then break end
 end
 
@@ -89,7 +89,7 @@ hl.bind(mainMod .. " + Return",     hl.dsp.exec_cmd(launchPrefix .. TERMINAL)) -
 hl.bind(mainMod .. " + E",          hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER))
 hl.bind(mainMod .. " + M",          hl.dsp.exec_cmd(launchPrefix .. MUSIC)) -- useless
 hl.bind(mainMod .. " + W",          hl.dsp.exec_cmd(launchPrefix .. BROWSER))
-hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"))
+hl.bind("CONTROL + SHIFT + L",      hl.dsp.exec_cmd(noctCall .. "session lock"))
 hl.bind(mainMod .. " + Z",          hl.dsp.exec_cmd(noctCall .. "settings-toggle"))
 hl.bind(mainMod .. " + X",          hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center"))
 hl.bind(mainMod .. " + Space",      hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher"))
@@ -141,7 +141,7 @@ hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-cen
 
 -- Focus on monitors
 for i, mon in ipairs(MONITORS) do
-    hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ monitor = mon }))
+    hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ monitor = mon.name }))
 end
 
 -- Focus on workspace number

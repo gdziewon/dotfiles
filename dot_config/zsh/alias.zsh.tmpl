@@ -24,7 +24,7 @@ if command -v eza >/dev/null 2>&1; then
     alias la='eza -a --color=always --group-directories-first --icons=always'  # all files and dirs
     alias ll='eza -l --color=always --group-directories-first --icons=always'  # long format
     alias lt='eza -aT --color=always --group-directories-first --icons=always' # tree listing
-    alias l.="eza -a | grep -e '^\.'"                               # show only dotfiles
+    alias tree="ls --tree"
 fi
 
 {{ if eq .chezmoi.osRelease.idLike "arch" }}
@@ -38,7 +38,7 @@ alias upd="sudo pacman -Syu && paru -Syu"
 # Cleanup orphaned packages
 alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"
 
-# Recent installed packages
+# Recent Installed Packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 {{ else if eq .chezmoi.osRelease.idLike "debian" }}
@@ -54,7 +54,7 @@ alias upd="sudo apt update && sudo apt upgrade"
 if [[ $TERM == "xterm-kitty" ]]; then
     alias sshk="kitty +kitten ssh"
     # I dont want to messa round with it
-    alias ssh="TERM=xterm-256color ssh"
+    alias ssht="TERM=xterm-256color ssh"
     alias clear="clear -T xterm-256color"
 fi
 
