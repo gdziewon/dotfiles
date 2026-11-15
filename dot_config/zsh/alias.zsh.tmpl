@@ -18,6 +18,9 @@ alias jctl="journalctl -p 3 -xb"
 # gst is to long!~
 alias gs='git status'
 
+alias sshp='ssh -o PreferredAuthentications=password'
+alias scpp='scp -o PreferredAuthentications=password'
+
 # Replace ls with eza
 if command -v eza >/dev/null 2>&1; then
     alias ls='eza -al --color=always --group-directories-first --icons=always' # preferred listing
@@ -45,7 +48,6 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 # Debian specific
 alias fd="fdfind"
-alias bat="batcat"
 alias upd="sudo apt update && sudo apt upgrade"
 
 {{ end }}

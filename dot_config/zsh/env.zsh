@@ -16,3 +16,8 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 export EDITOR='nvim'
+
+if command -v direnv >/dev/null 2>&1; then
+	export DIRENV_HOOKED="EH"
+	eval "$(direnv hook zsh)"
+fi
