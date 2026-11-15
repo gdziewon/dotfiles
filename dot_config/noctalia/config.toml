@@ -148,3 +148,9 @@ enabled = true
 force = true
 temperature_day = 6500
 temperature_night = 5000
+
+[wallpaper]
+directory = "$HOME/.config/wallpapers"
+
+[wallpaper.default]
+path = "$HOME/.config/wallpapers/default"
