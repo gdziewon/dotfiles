@@ -1,0 +1,11 @@
+{{- $osid := .chezmoi.osRelease.id -}}
+{{- if hasKey .chezmoi.osRelease "idLike" -}}
+{{-   if contains "arch" .chezmoi.osRelease.idLike -}}
+{{-     $osid = "arch" -}}
+{{-   else if contains "debian" .chezmoi.osRelease.idLike -}}
+{{-     $osid = "debian" -}}
+{{-   end -}}
+{{- end -}}
+
+[data]
+    osid = {{ $osid | quote }}

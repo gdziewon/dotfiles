@@ -30,7 +30,7 @@ if command -v eza >/dev/null 2>&1; then
     alias tree="ls --tree"
 fi
 
-{{ if eq .chezmoi.osRelease.idLike "arch" }}
+{{ if eq .osid "arch" -}}
 
 # Arch specific
 alias rmpkg="sudo pacman -Rsn"
@@ -44,13 +44,17 @@ alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"
 # Recent Installed Packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
-{{ else if eq .chezmoi.osRelease.idLike "debian" }}
+{{ else if eq .osid "debian" -}}
 
 # Debian specific
 alias fd="fdfind"
 alias upd="sudo apt update && sudo apt upgrade"
 
-{{ end }}
+{{ else if eq .osid "gentoo" -}}
+# Gentoo specific
+alias upd="sudo emerge --ask --update --deep --changed-use @world"
+
+{{ end -}}
 
 # Specifically for kitty
 if [[ $TERM == "xterm-kitty" ]]; then
