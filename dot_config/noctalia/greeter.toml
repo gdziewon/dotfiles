@@ -1,0 +1,19 @@
+# noctalia-greeter config
+# copy to /var/lib/noctalia-greeter
+
+[appearance]
+scheme = "Synced"
+hide_logo = true
+
+[auth]
+allow_empty_password = true
+
+[idle]
+timeout = 30
+
+# change if needed
+[session]
+default = "Hyprland"
+[user]
+default = "gdziewon"
+
