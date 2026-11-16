@@ -27,6 +27,7 @@ thickness = 35
 
 
 [shell]
+avatar_path = "$HOME/.config/avatars/default"
 clipboard_image_action_command = "satty -f -"
 launch_apps_as_systemd_services = true
 polkit_agent = true
