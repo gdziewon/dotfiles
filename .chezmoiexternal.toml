@@ -40,3 +40,8 @@
     stripComponents = 1
     refreshPeriod = "168h"
     forget = true
+[".local/share/icons/Bibata-Modern-Ice"]
+    type = "archive"
+    url = "https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor/releases/download/v1.1/hypr_Bibata-Modern-Ice.tar.gz"
+    exact = true
+    forget = true

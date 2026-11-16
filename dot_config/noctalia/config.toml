@@ -154,3 +154,6 @@ directory = "$HOME/.config/wallpapers"
 
 [wallpaper.default]
 path = "$HOME/.config/wallpapers/default"
+
+[brightness]
+minimum_brightness = '0.1' # 0.0 <-> 1.0

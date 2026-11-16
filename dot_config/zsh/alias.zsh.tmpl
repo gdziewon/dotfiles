@@ -39,7 +39,7 @@ alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias upd="sudo pacman -Syu && paru -Syu"
 
 # Cleanup orphaned packages
-alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"
+alias cln="sudo pacman -Rsn $(pacman -Qtdq)"
 
 # Recent Installed Packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
@@ -53,6 +53,7 @@ alias upd="sudo apt update && sudo apt upgrade"
 {{ else if eq .osid "gentoo" -}}
 # Gentoo specific
 alias upd="sudo emerge --ask --update --deep --changed-use @world"
+alias cln="sudo emerge --depclean"
 
 {{ end -}}
 

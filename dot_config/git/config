@@ -1,7 +1,4 @@
 [credential]
 	helper = store
-[user]
-	name = gdziewon
-	email = 116833445+gdziewon@users.noreply.github.com
 [core]
-	editor = nvim
+	editor = vim
