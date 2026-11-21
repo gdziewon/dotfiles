@@ -8,10 +8,9 @@ hl.on("hyprland.start", function ()
         "xhost +SI:localuser:root",
         "hypridle",
 
-
-        "pipewire",
-        "wireplumber",
-        "pipewire-pulse",
+{{- if eq .osid "gentoo" }}
+    "gentoo-pipewire-launcher",
+{{- end }}
     }
 
     for _, cmd in ipairs(services) do

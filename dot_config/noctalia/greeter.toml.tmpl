@@ -11,9 +11,9 @@ allow_empty_password = true
 [idle]
 timeout = 30
 
-# change if needed
 [session]
 default = "Hyprland"
+
 [user]
-default = "gdziewon"
+default = {{ .chezmoi.username | quote }}
 
