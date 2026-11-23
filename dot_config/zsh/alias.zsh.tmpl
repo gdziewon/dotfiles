@@ -49,6 +49,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 # Debian specific
 alias fd="fdfind"
 alias upd="sudo apt update && sudo apt upgrade"
+alias cln="sudo apt autoremove --purge"
 
 {{ else if eq .osid "gentoo" -}}
 # Gentoo specific
@@ -66,6 +67,7 @@ if [[ $TERM == "xterm-kitty" ]]; then
     alias icat="kitten icat"
 fi
 
+# If bat is available
 if command -v bat >/dev/null 2>&1; then
     alias cat="bat -pp"
     alias less="bat --paging=always"

@@ -44,4 +44,6 @@
     type = "archive"
     url = "https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor/releases/download/v1.1/hypr_Bibata-Modern-Ice.tar.gz"
     exact = true
+    stripComponents = 1
+    refreshPerios = "168h"
     forget = true
